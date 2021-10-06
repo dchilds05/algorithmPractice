@@ -1,0 +1,41 @@
+/*
+Find the first repeated character in a string
+Difficulty Level : Easy
+Last Updated : 22 Apr, 2021
+Given a string, find the first repeated character in it. We need to find the character that occurs more than once and whose index of second occurrence is smallest. A variation of this question is discussed here.
+ 
+
+find first repeated character in a string
+
+Examples: 
+
+Input: ch = “geeksforgeeks” 
+Output: e 
+e is the first element that repeats
+
+Input: str = “hello geeks” 
+Output: l 
+l is the first element that repeats
+*/
+
+const firstRepeated = require("./firstRepeated")
+
+it("geeksforgeeks", () => {
+    expect(firstRepeated("geeksforgeeks")).toBe("g");
+})
+
+it("hello geeks", () => {
+    expect(firstRepeated("hello geeks")).toBe("e");
+})
+
+it("mountains are the best", () => {
+    expect(firstRepeated("mountains are the best")).toBe("n");
+})
+
+it("danielchilds", () => {
+    expect(firstRepeated("danielchilds")).toBe("d");
+})
+
+it("grassy", () => {
+    expect(firstRepeated("grassy")).toBe("s");
+})

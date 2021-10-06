@@ -1,0 +1,39 @@
+/*
+Question : Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+An input string is valid if:
+Open brackets must be closed by the same type of brackets.
+Open brackets must be closed in the correct order.
+An empty string is considered valid.
+
+Eg:
+   string = "()[]{}"              //valid
+   string = "[{()]}"              //invalid
+   string = ""                    //valid
+*/
+
+const validParentheses = require("./validParentheses");
+
+it("()[]{}", () => {
+    expect(validParentheses("()[]{}")).toBe("valid")
+})
+
+it("[{()]}", () => {
+    expect(validParentheses("[{()]}")).toBe("invalid")
+})
+
+it("", () => {
+    expect(validParentheses("")).toBe("valid")
+})
+
+it("()[]{}[{[{((]))}", () => {
+    expect(validParentheses("()[]{}[{[{((]))}")).toBe("invalid")
+})
+
+it("()[((()))]{[]}", () => {
+    expect(validParentheses("()[((()))]{[]}")).toBe("valid")
+})
+
+it("()[((()))]{[]}(", () => {
+    expect(validParentheses("()[((()))]{[]}(")).toBe("invalid")
+})
